@@ -1,0 +1,12 @@
+.kanban-block{
+    padding: 5px;
+    border-radius: 5px;
+    width: 30%;
+    min-width: 5rem;
+    min-height: 4.5rem;
+    justify-content: center;
+}
+
+#complete{
+    background-color: rgb(145, 235, 141);
+}

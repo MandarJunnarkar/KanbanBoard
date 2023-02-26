@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Todo from "./Components/Todo";
+import Progress from "./Components/Progress";
+import Completed from "./Components/Completed";
+import { useState } from "react";
 
 function App() {
+  const [progress, setProgress] = useState([])
+  console.log(progress);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div id="container">
+        <div className="kanban-title">
+          <strong className="kanban-title-text">Kanban Board</strong>
+        </div>
+
+        <div className="kanban-items">
+          <Todo setProgress={setProgress}/>
+          <Progress progress={progress}/>
+          <Completed />
+        </div>
+      </div>
+    </>
   );
 }
 
